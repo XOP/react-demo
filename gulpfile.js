@@ -33,9 +33,6 @@ gulp.task('jsx', function(){
         .pipe(gulp.dest('assets/js/build'));
 });
 
-// jsx
-// todo
-
 // js
 gulp.task('js', ['jsx'], function(){
     return gulp.src('./assets/js/build/**/*.js')

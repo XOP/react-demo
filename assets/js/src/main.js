@@ -5,11 +5,31 @@ console.log('Start');
 var MessageBox = React.createClass({
     render: function(){
         return (
-            <div className="column">
+            <div className="row">
                 <h2>Hello, React!</h2>
-                <hr/>
+                <SubMessage />
             </div>
             );
+    }
+});
+
+var SubMessage = React.createClass({
+
+    getInitialState: function(){
+        return {
+            isVisible : true,
+            message : 'How is it goin\'?'
+        }
+    },
+
+    render: function(){
+
+        var hidden = !this.state.isVisible;
+        var klass = hidden ? 'u-hidden' : '';
+
+        return (
+           <h5 className={klass}>{this.state.message}</h5>
+           );
     }
 });
 

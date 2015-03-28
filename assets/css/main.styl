@@ -1,5 +1,72 @@
 
+/* Helpers
+---------------------------------------------------------------------------------- */
+
+margin($direction){
+
+  $margins = 1 ... 5;
+  $units = rem;
+
+  for $val, i in $margins {
+
+    if i == 0{
+      i = '';
+      }
+
+    $dir = 'r';
+    if $direction == 'left' {
+      $dir = 'l';
+      }
+    if $direction == 'top' {
+      $dir = 't';
+      }
+    if $direction == 'bottom' {
+      $dir = 'b';
+      }
+
+    .m{$dir}-{i}x {
+      margin-{$direction}: unit($val, $units);
+      }
+
+    }
+  }
+
+margin('right');
+margin('left');
+margin('top');
+margin('bottom');
+
+/* /Helpers
+---------------------------------------------------------------------------------- */
+
+
+/* Layout
+---------------------------------------------------------------------------------- */
+
+body {
+  padding: 2vh 2vw;
+  }
+
 .container {
   padding: 5vh 5vw;
-  background: #f0f0f0;
+  border-radius: 2rem;
+  background: #E4EEF4;
   }
+
+/* /Layout
+---------------------------------------------------------------------------------- */
+
+
+/* Utilities
+---------------------------------------------------------------------------------- */
+
+.u-hidden {
+  display: none;
+  }
+
+.u-invisible {
+  visibility: hidden;
+  }
+
+/* /Utilities
+---------------------------------------------------------------------------------- */
